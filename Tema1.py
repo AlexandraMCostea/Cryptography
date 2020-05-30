@@ -27,6 +27,10 @@ def openFile():
     global filename
     global data
     filename = filedialog.askopenfilename(title="Choose a file.", filetypes=(("text files","*.txt"),("All files","*.*")))
+    
+    #To make sure you won't introduce the wrong type of file and get an error just use the following line instead
+    #filename = filedialog.askopenfilename(title="Choose a file.", filetypes=(("text files","*.txt")))
+    
     browse.insert(END, filename)
     with open(filename) as file:
         data = file.read()
